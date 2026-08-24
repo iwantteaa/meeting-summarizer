@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meeting Summarizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Meeting Summarizer</h1>
+    <p class="subtitle">Upload meeting audio to get a transcript, summary, and action items.</p>
+
+    <form id="uploadForm">
+      <input type="file" id="audioFile" accept="audio/*" required />
+      <button type="submit" id="submitBtn">Transcribe & Summarize</button>
+    </form>
+
+    <div id="status" class="status"></div>
+
+    <div id="results" class="results hidden">
+      <section>
+        <h2>Summary</h2>
+        <p id="summaryText"></p>
+      </section>
+
+      <section>
+        <h2>Key Decisions</h2>
+        <ul id="decisionsList"></ul>
+      </section>
+
+      <section>
+        <h2>Action Items</h2>
+        <table id="actionTable">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Owner</th>
+              <th>Due Date</th>
+            </tr>
+          </thead>
+          <tbody id="actionTableBody"></tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Full Transcript</h2>
+        <pre id="transcriptText"></pre>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
